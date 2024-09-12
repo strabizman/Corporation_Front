@@ -25,9 +25,9 @@
   
     <!-- Hero Section with Video Background -->
 <header class="relative h-screen overflow-hidden">
-  <!-- Video Background -->
-  <video autoplay muted loop playsinline style="width: 100%; height: 100%;">
-    <source src="assets/video/Squadron42.webm" type="video/mp4">
+  <video muted loop playsinline style="width: 100%; height: 100%;">
+    <source src="assets/video/Squadron42.webm" type="video/webm">
+    <source src="assets/video/Squadron42.mp4" type="video/mp4">
     Votre navigateur ne supporte pas la vidéo HTML5.
   </video>
 
@@ -101,15 +101,20 @@
     </footer>
   </div>
   <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        const video = document.querySelector('video');
-        video.play().catch(error => {
-          console.log('Erreur de lecture vidéo:', error);
-        });
-      }, 1000);  // 1 seconde de délai avant de forcer la lecture
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.querySelector('video');
+      
+      // Assurez-vous que la vidéo est muette en ajoutant l'attribut muted via JavaScript
+      video.muted = true;  // Définit la propriété muted
+      video.setAttribute('muted', '');  // Ajoute l'attribut muted à l'élément
+      
+      // Forcer la lecture automatique après avoir défini muted
+      video.play().catch(err => {
+        console.error('La lecture automatique a été bloquée:', err);
+      });
     });
   </script>
+  
 
 </body>
 </html>
