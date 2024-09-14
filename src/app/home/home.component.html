@@ -4,82 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Star Citizen Hub</title>
-  <!-- Ajoutez ici vos styles et autres balises meta -->
 </head>
-<body>
-<div class="min-h-screen bg-black text-gray-200">
-    <!-- Navbar -->
-    <nav class="fixed w-full z-10 top-0 bg-black bg-opacity-80 p-4 transition duration-300">
+<body class="m-0 p-0 bg-black">
+  <div class="min-h-screen bg-black text-gray-300 m-0 p-0">
+
+    <!-- Navbar fixe -->
+    <nav class="fixed w-full top-0 left-0 z-20 bg-blue-600 bg-opacity-100 p-4 transition duration-300">
       <div class="container mx-auto flex justify-between items-center">
-        <a href="/" class="text-2xl font-bold text-blue-500">Star Citizen Hub</a>
+        <a href="/" class="text-2xl font-bold text-white">Star Citizen Hub</a>
         <div class="space-x-4">
-          <a href="/" class="hover:text-blue-500 transition">Accueil</a>
-          <a href="/univers" class="hover:text-blue-500 transition">Univers</a>
-          <a href="/flotte" class="hover:text-blue-500 transition">Flotte</a>
-          <a href="/communaute" class="hover:text-blue-500 transition">Communauté</a>
-          <a href="/inscription" class="hover:text-blue-500 transition">Inscription</a>
-          <a href="/connexion" class="hover:text-blue-500 transition">Connexion</a>
+          <a href="/" class="hover:text-white transition">Accueil</a>
+          <a href="/univers" class="hover:text-white transition">Univers</a>
+          <a href="/flotte" class="hover:text-white transition">Flotte</a>
+          <a href="/communaute" class="hover:text-white transition">Communauté</a>
+          <a href="/inscription" class="hover:text-white transition">Inscription</a>
+          <a href="/connexion" class="hover:text-white transition">Connexion</a>
         </div>
       </div>
     </nav>
-  
-    <!-- Hero Section with Video Background -->
-<header class="relative h-screen overflow-hidden">
-  <video muted loop playsinline style="width: 100%; height: 100%;">
-    <source src="assets/video/Squadron42.webm" type="video/webm">
-    <source src="assets/video/Squadron42.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo HTML5.
-  </video>
+    <header class="relative">
+    <!-- Section vidéo sans padding -->
+    <section class="relative h-screen">
+      <video autoplay muted loop playsinline class="absolute w-full h-full object-cover z-0">
+        <source src="assets/video/Squadron42.webm" type="video/webm">
+        <source src="assets/video/Squadron42.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo HTML5.
+      </video>
 
-  <!-- Content Overlay -->
-  <div class="absolute inset-0 z-10 flex flex-col justify-center items-center bg-black bg-opacity-50">
-    <h1 class="text-5xl font-bold text-white">Voyagez dans l'infini</h1>
-    <p class="text-xl text-gray-300 mt-4 max-w-md text-center">
-      Rejoignez la plus grande aventure spatiale et explorez des galaxies inconnues dans Star Citizen.
-    </p>
-    <a href="/inscription" class="mt-8 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-black font-bold rounded-full">
-      Rejoignez la Flotte
-    </a>
-  </div>
-</header>
-  
-    <!-- Section 1: Présentation de l'Univers (Parallax) -->
-    <section class="h-screen bg-fixed bg-center bg-cover" style="background-image: url('/path-to-universe-image.jpg');">
+      <!-- Contenu de la vidéo -->
+      <div class="absolute w-full h-full z-10 flex flex-col justify-center items-center bg-black bg-opacity-50"> 
+        <!-- Justify-center garantit que le texte est centré verticalement -->
+        <h1 class="text-5xl font-bold text-white">Voyagez dans l'infini</h1>
+        <p class="text-xl text-gray-300 mt-4 max-w-md text-center">
+          Rejoignez la plus grande aventure spatiale et explorez des galaxies inconnues dans Star Citizen.
+        </p>
+        <a href="/inscription" class="mt-8 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-black font-bold rounded-full">
+          Rejoignez la Flotte
+        </a>
+      </div>
+    </section>
+  </header>
+    <section class="min-h-screen bg-fixed bg-center bg-cover" style="background-image: url('/path-to-universe-image.jpg');">
       <div class="h-full bg-black bg-opacity-60 flex items-center justify-center">
-        <div class="text-center">
-          <h2 class="text-4xl text-white font-bold">Découvrez un Univers Sans Limites</h2>
-          <p class="text-lg text-gray-300 mt-4 max-w-xl mx-auto">
+        <div class="text-center px-20"> 
+          <h2 class="text-4xl text-white font-bold mb-6">Découvrez un Univers Sans Limites</h2>
+          <p class="text-lg text-gray-300 mt-4 mb-8 max-w-xl mx-auto">
             Star Citizen propose des mondes incroyables, des planètes inexplorées, et des batailles interstellaires épiques.
           </p>
-          <a href="/univers" class="mt-6 px-4 py-2 bg-blue-500 text-black font-bold rounded-full hover:bg-blue-600">
+          <a href="/univers" class="mt-6 px-6 py-3 bg-blue-500 text-black font-bold rounded-full hover:bg-blue-600">
             Explorer l'Univers
           </a>
         </div>
       </div>
     </section>
-  
-    <!-- Section 2: Présentation des Vaisseaux (Grid Layout) -->
-    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
-      <div class="container mx-auto text-center">
-        <h2 class="text-4xl font-bold text-white">Vaisseaux de Combat</h2>
-        <p class="text-gray-300 mt-4">Des vaisseaux pour toutes les missions. Choisissez votre vaisseau et rejoignez la flotte.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-          <!-- Example of a ship card -->
-          <div class="bg-gray-800 rounded-lg p-4 hover:shadow-lg transition">
-            <img src="/path-to-ship-image.jpg" alt="Vaisseau 1" class="w-full h-48 object-cover rounded-md">
-            <h3 class="text-xl text-white font-bold mt-4">Vaisseau de Chasse</h3>
-            <p class="text-gray-400 mt-2">Conçu pour des batailles rapides et décisives dans l'espace.</p>
-          </div>
-          <!-- Répétez pour d'autres vaisseaux -->
-        </div>
-      </div>
-    </section>
-  
-    <!-- Section 3: Communauté (Minimalistic) -->
+
+    <!-- Section Communauté -->
     <section class="py-20 bg-black">
       <div class="container mx-auto text-center">
-        <h2 class="text-4xl font-bold text-white">Rejoignez une Communauté de Pilotes</h2>
-        <p class="text-gray-400 mt-4 max-w-xl mx-auto">
+        <h2 class="text-4xl font-bold text-white mb-6">Rejoignez une Communauté de Pilotes</h2>
+        <p class="text-gray-400 mt-4 mb-8 max-w-xl mx-auto">
           La communauté Star Citizen est l'une des plus passionnées. Participez aux événements et collaborez avec d'autres pilotes.
         </p>
         <a href="/communaute" class="mt-8 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-black font-bold rounded-full">
@@ -87,7 +70,7 @@
         </a>
       </div>
     </section>
-  
+
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-500 py-10">
       <div class="container mx-auto text-center">
@@ -100,21 +83,20 @@
       </div>
     </footer>
   </div>
+
+  <!-- Script pour la lecture automatique de la vidéo -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const video = document.querySelector('video');
-      
-      // Assurez-vous que la vidéo est muette en ajoutant l'attribut muted via JavaScript
-      video.muted = true;  // Définit la propriété muted
-      video.setAttribute('muted', '');  // Ajoute l'attribut muted à l'élément
-      
-      // Forcer la lecture automatique après avoir défini muted
+      video.muted = true;
+      video.setAttribute('muted', '');
+
       video.play().catch(err => {
         console.error('La lecture automatique a été bloquée:', err);
       });
     });
   </script>
-  
-
 </body>
 </html>
+
+
