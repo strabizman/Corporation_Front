@@ -1,0 +1,124 @@
+<section class="bg-gray-900 text-white min-h-screen p-6">
+    <!-- Section principale avec image et résumé -->
+    <div class="container mx-auto max-w-5xl">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Image principale du vaisseau -->
+        <img
+          src="/assets/images/Ironclade.jpg"
+          alt="Ironclad"
+          class="rounded-lg shadow-lg w-full lg:w-1/2"
+        />
+        <!-- Informations principales -->
+        <div class="lg:w-1/2">
+          <h1 class="text-4xl font-bold mb-4">Ironclad</h1>
+          <p class="text-gray-300 mb-6">
+            Le Ironclad est un vaisseau polyvalent conçu pour les combats intensifs et les missions en
+            environnement hostile. Son design robuste et ses systèmes avancés en font un choix idéal pour les pilotes exigeants.
+          </p>
+          <!-- Caractéristiques essentielles -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <h3 class="text-lg font-bold">Classe</h3>
+              <p class="text-gray-400">Combat lourd</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Fabricant</h3>
+              <p class="text-gray-400">Anvil Aerospace</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Équipage</h3>
+              <p class="text-gray-400">4 à 6 membres</p>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold">Capacité de cargo</h3>
+              <p class="text-gray-400">200 SCU</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Section détaillée avec onglets -->
+    <div class="container mx-auto max-w-5xl mt-12">
+      <h2 class="text-2xl font-bold mb-4">Caractéristiques détaillées</h2>
+      <div>
+        <!-- Onglets -->
+        <div class="flex border-b border-gray-700">
+            <button
+              class="px-4 py-2 text-lg font-medium bg-gray-900 hover:bg-gray-800 rounded-t-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              (click)="showTab('specs')"
+            >
+              Spécifications
+            </button>
+            <button
+              class="px-4 py-2 text-lg font-medium bg-gray-900 hover:bg-gray-800 rounded-t-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              (click)="showTab('armament')"
+            >
+              Armement
+            </button>
+            <button
+              class="px-4 py-2 text-lg font-medium bg-gray-900 hover:bg-gray-800 rounded-t-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              (click)="showTab('history')"
+            >
+              Historique
+            </button>
+          </div>
+  
+        <!-- Contenu des onglets -->
+        <div id="specs" #specsTab class="p-4 bg-gray-800 rounded-b-md hidden">
+          <h3 class="text-lg font-bold mb-2">Spécifications techniques</h3>
+          <ul class="list-disc list-inside text-gray-300">
+            <li><strong>Longueur :</strong> 50 mètres</li>
+            <li><strong>Largeur :</strong> 28 mètres</li>
+            <li><strong>Hauteur :</strong> 12 mètres</li>
+            <li><strong>Propulseur :</strong> Classe 3</li>
+            <li><strong>Modules personnalisables :</strong> Oui</li>
+          </ul>
+        </div>
+        <div id="armament" #armamentTab class="p-4 bg-gray-800 rounded-b-md hidden">
+          <h3 class="text-lg font-bold mb-2">Armement</h3>
+          <ul class="list-disc list-inside text-gray-300">
+            <li><strong>Tourelles :</strong> 2 tourelles laser de taille 4</li>
+            <li><strong>Missiles :</strong> Lance-missiles à tête chercheuse</li>
+            <li><strong>Canons fixes :</strong> 2 canons à plasma de taille 3</li>
+          </ul>
+        </div>
+        <div id="history" #historyTab class="p-4 bg-gray-800 rounded-b-md hidden">
+          <h3 class="text-lg font-bold mb-2">Histoire</h3>
+          <p class="text-gray-300">
+            Le Ironclad a été introduit en 2951 par Anvil Aerospace. Conçu pour les missions de combat de
+            grande envergure, il s'est rapidement imposé comme un choix privilégié parmi les pilotes
+            indépendants et les organisations militaires.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Galerie d'images -->
+    <div class="container mx-auto max-w-5xl mt-12">
+      <h2 class="text-2xl font-bold mb-4">Galerie</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img
+          src="/assets/images/Ironclad_1.jpg"
+          alt="Ironclad - Vue 1"
+          class="rounded-lg shadow-lg hover:scale-105 transition"
+        />
+        <img
+          src="/assets/images/Ironclad_2.jpg"
+          alt="Ironclad - Vue 2"
+          class="rounded-lg shadow-lg hover:scale-105 transition"
+        />
+        <img
+          src="/assets/images/Ironclad_3.jpg"
+          alt="Ironclad - Vue 3"
+          class="rounded-lg shadow-lg hover:scale-105 transition"
+        />
+        <img
+          src="/assets/images/Ironclad_4.jpg"
+          alt="Ironclad - Vue 4"
+          class="rounded-lg shadow-lg hover:scale-105 transition"
+        />
+      </div>
+    </div>
+  </section>
+  
