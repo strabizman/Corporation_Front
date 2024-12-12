@@ -1,4 +1,5 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, HostListener, OnInit } from '@angular/core';
+import { ShipService } from '../../../services/shipService/ship.service'; 
 
 @Component({
   selector: 'app-iron-clade',
@@ -6,11 +7,26 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: './iron-clade.component.html',
   styleUrls: ['./iron-clade.component.scss'],
 })
-export class IronCladeComponent {
+export class IronCladeComponent implements OnInit {
   // Références aux onglets
   @ViewChild('specsTab') specsTab!: ElementRef<HTMLDivElement>;
   @ViewChild('armamentTab') armamentTab!: ElementRef<HTMLDivElement>;
   @ViewChild('historyTab') historyTab!: ElementRef<HTMLDivElement>;
+
+  // Référence au fond avec parallaxe
+  @ViewChild('parallaxBg') parallaxBg!: ElementRef<HTMLDivElement>;
+
+  // Données dynamiques du vaisseau
+  ship: any; // Les données du vaisseau seront stockées ici
+
+  constructor(private ShipService: ShipService) {}
+
+  ngOnInit(): void {
+    // Charger les données du vaisseau (par exemple, en prenant le premier dans l'API)
+    this.ShipService.getShips().subscribe((ship) => {
+      this.ship = ship.find((ship: any) => ship.name === 'Ironclade'); // Filtre par nom ou autre critère
+    });
+  }
 
   /**
    * Affiche l'onglet sélectionné et cache les autres.
@@ -34,6 +50,19 @@ export class IronCladeComponent {
       this.armamentTab.nativeElement.classList.remove('hidden');
     } else if (tabId === 'history') {
       this.historyTab.nativeElement.classList.remove('hidden');
+    }
+  }
+
+  /**
+   * Gère l'effet de parallaxe au défilement.
+   */
+  @HostListener('window:scroll', ['$event'])
+  onScroll(): void {
+    const scrollTop = window.scrollY;
+
+    // Appliquer l'effet de parallaxe uniquement si l'élément est défini
+    if (this.parallaxBg) {
+      this.parallaxBg.nativeElement.style.transform = `translateY(${scrollTop * 0.5}px)`;
     }
   }
 }

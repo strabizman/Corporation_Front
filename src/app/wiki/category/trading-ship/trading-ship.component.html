@@ -58,12 +58,15 @@
           <div
             class="group relative overflow-hidden rounded-lg shadow-lg bg-gray-800 transition hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-blue-500"
           >
-            <a href="Ironclade" class="block">
-              <img
-                src="/assets/images/Ironclade.jpg"
-                alt="Vaisseaux d'Exploration"
-                class="w-full h-64 object-cover transition group-hover:opacity-80"
-              />
+           <!-- Image principale du vaisseau avec lien -->
+          <a [routerLink]="['Ironclade']">
+          <img
+           src="/assets/images/Ironclade.jpg"
+           alt="Ironclad"
+           class="rounded-lg shadow-lg w-full lg:w-1/2 cursor-pointer"
+  />
+
+
               <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 group-hover:opacity-75 transition"></div>
               <div class="absolute bottom-4 left-4 text-white z-10">
                 <h3 class="text-2xl font-bold">IronClade</h3>

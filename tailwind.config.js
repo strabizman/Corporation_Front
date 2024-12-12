@@ -4,7 +4,12 @@ module.exports = {
     './src/**/*.{html,ts,scss,cjs,mjs,jsx,tsx}', // Assurez-vous que les fichiers Angular sont bien inclus
   ],
   theme: {
-    extend: {},
+    extend: {
+      navbar: {
+        DEFAULT: '#FF8C00', // Couleur par défaut
+        hover: '#FFA500',   // Couleur au survol
+      },
+    },
   },
   plugins: [],
 }

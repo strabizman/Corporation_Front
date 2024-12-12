@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router'; // Import nécessaire pour routerLink
 
 @Component({
   selector: 'app-trading-ship',
   standalone: true,
-  imports: [],
+  imports: [RouterModule], // Ajout de RouterModule ici
   templateUrl: './trading-ship.component.html',
-  styleUrl: './trading-ship.component.scss'
+  styleUrls: ['./trading-ship.component.scss']
 })
-export class TradingShipComponent {
+export class TradingShipComponent { }
 
-}
